@@ -6,15 +6,18 @@ on((action, sender, response) => {
 });
 
 chrome.commands.onCommand.addListener(command => {
+	if (!res) {
+		return;
+	}
 	switch (command) {
 		case "play":
-			res && res("play");
+			res("play");
 			break;
 		case "prev":
-			res && res("prev");
+			res("prev");
 			break;
 		case "next":
-			res && res("next");
+			res("next");
 			break;
 		default:
 	}
