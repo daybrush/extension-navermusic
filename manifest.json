@@ -1,0 +1,47 @@
+{
+	"content_scripts": [
+		{
+			"matches": ["*://playerui.music.naver.com/*"],
+			"js": ["Messenger.js", "content_scripts.js"]
+		}
+	],
+	"commands": {
+		"play": {
+			"suggested_key": {
+				"default": "MediaPlayPause"
+			},
+			"global": true,
+			"description": "toggle play & pause"
+		},
+		"prev": {
+			"suggested_key": {
+				"default": "MediaPrevTrack"
+			},
+			"global": true,
+			"description": "play prev track"
+		},
+		"next": {
+			"suggested_key": {
+				"default": "MediaNextTrack"
+			},
+			"global": true,
+			"description": "play next track"
+		}
+	},
+	"description": "Music Player Controller",
+	"icons": {
+		"128": "icons/icon128.png",
+		"16": "icons/icon16.png",
+		"48": "icons/icon48.png"
+	},
+	"externally_connectable": {
+		"matches": ["*://*.naver.com/*"]
+	},
+	"background": {
+		"scripts": ["Messenger.js", "background.js"]
+	},
+	"name": "Music Player Controller",
+	"manifest_version": 2,
+	"permissions": ["http://*/*", "https://*/*", "unlimitedStorage", "notifications" ],
+	"version": "1"
+}
